@@ -1,0 +1,5 @@
+{
+  "name": "Claude Code",
+  "description": "Mention @claude in an issue or PR comment for help, or comment @claude review on a PR for a review with inline comments. Uses HOURCAR's shared Claude workflow.",
+  "categories": ["Automation"]
+}
