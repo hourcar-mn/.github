@@ -1,0 +1,21 @@
+name: Claude Code
+
+# Runs the shared org workflow in hourcar-mn/.github: "@claude review" on a PR
+# for an inline code review, any other @claude mention for a request.
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  claude:
+    if: contains(github.event.comment.body, '@claude')
+    uses: hourcar-mn/.github/.github/workflows/claude.yml@main
+    secrets: inherit
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+      actions: read
